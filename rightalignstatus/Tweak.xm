@@ -62,27 +62,10 @@ CGFloat userblue = 0;
     }
 	return %orig;
 }
-
-// Force Statusbar Clock On LS
-- (BOOL)shouldShowLockStatusBarTime
-{
-	if(enabled) {
-		return YES;
-    }
-	return %orig;
-}
-
-- (BOOL)wantsToShowStatusBarTime
-{
-	if(enabled) {
-		return YES;
-    }
-	return %orig;
-}
 %end
 
-%hook SBLockScreenViewControllerBase
-// Force Statusbar Clock On LS
+%hook SBAwayController
+// Force Statusbar Clock On LS?
 - (BOOL)shouldShowLockStatusBarTime
 {
 	if(enabled) {
