@@ -1,7 +1,7 @@
 Package: com.insomniac.ras
 Name: RightAlignStatus
 Depends: mobilesubstrate
-Version: 0.3.2
+Version: 0.3.5
 Architecture: iphoneos-arm
 Description: Right Align Statusbar like Android
 Maintainer: insomniac
