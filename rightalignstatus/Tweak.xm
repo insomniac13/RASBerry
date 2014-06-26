@@ -1,12 +1,17 @@
+#import <UIKit/UIStatusBarNewUIStyleAttributes.h>
+
 BOOL enabled = YES;
 BOOL lenabled = NO;
 BOOL carrierenabled = NO;
 BOOL ssbenabled = YES;
 BOOL ccenabled = NO;
 
-CGFloat userred = 0;
-CGFloat usergreen = 0;
-CGFloat userblue = 0;
+CGFloat userfred = 0;
+CGFloat userfgreen = 0;
+CGFloat userfblue = 0;
+CGFloat userbred = 0;
+CGFloat userbgreen = 0;
+CGFloat userbblue = 0;
 
 // Statusbar Alignment
 %hook UIStatusBarItem
@@ -31,17 +36,14 @@ CGFloat userblue = 0;
 %end
 
 %hook UIStatusBarNewUIForegroundStyleAttributes
-// Change statusbar items color
--(BOOL) _isForegroundColorSafe:(id)hexcolor
+// Change statusbar color?
+-(id) initWithRequest:(id)arg1 backgroundColor:(id)arg2 foregroundColor:(id)arg3
 {
-	return YES;
-}
-
--(id) initWithHeight:(double)arg1 legibilityStyle:(long long)arg2 tintcolor:(id)arg3 backgroundColor:(id)arg4
-{
-		if(ccenabled){
-			return %orig(arg1, arg2, [UIColor colorWithRed:userred green:usergreen blue:userblue alpha:1], arg4);}
-		return %orig;
+	if(ccenabled){
+		return %orig(arg1, [UIColor colorWithRed:userbred green:userbgreen blue:userbblue alpha:1], [UIColor colorWithRed:userfred green:userfgreen blue:userfblue alpha:1]);
+	}
+	
+	return %orig;
 }
 %end
 
@@ -49,18 +51,9 @@ CGFloat userblue = 0;
 // Hide (Editing to come later) Carrier Name
 - (void)_updateServiceItem
 {
-    if(!carrierenabled) %orig;
-}
-%end
-
-%hook SBLockScreenViewController
-// Force Small Statusbar LS iPad
-- (long long)statusBarStyle
-{
-	if(ssbenabled) {
-		return 0;
-    }
-	return %orig;
+    if(!carrierenabled){
+		%orig;
+	}
 }
 %end
 
@@ -107,19 +100,33 @@ static void loadSettings()
         ccenabled = [[prefs objectForKey:@"ccenabled"] boolValue];
     }
 	
-	if([prefs objectForKey:@"userred"])
+	if([prefs objectForKey:@"userfred"])
     {
-        userred = [[prefs objectForKey:@"userred"] floatValue];
+        userfred = [[prefs objectForKey:@"userfred"] floatValue];
     }
 	
-	if([prefs objectForKey:@"usergreen"])
+	if([prefs objectForKey:@"userfgreen"])
     {
-        usergreen = [[prefs objectForKey:@"usergreen"] floatValue];
+        userfgreen = [[prefs objectForKey:@"userfgreen"] floatValue];
     }
 	
-	if([prefs objectForKey:@"userblue"])
+	if([prefs objectForKey:@"userfblue"])
     {
-        userblue = [[prefs objectForKey:@"userblue"] floatValue];
+        userfblue = [[prefs objectForKey:@"userfblue"] floatValue];
+    }
+	if([prefs objectForKey:@"userbred"])
+    {
+        userbred = [[prefs objectForKey:@"userbred"] floatValue];
+    }
+	
+	if([prefs objectForKey:@"userbgreen"])
+    {
+        userbgreen = [[prefs objectForKey:@"userbgreen"] floatValue];
+    }
+	
+	if([prefs objectForKey:@"userbblue"])
+    {
+        userbblue = [[prefs objectForKey:@"userbblue"] floatValue];
     }
 	
     // Don't forget to release you resources!!

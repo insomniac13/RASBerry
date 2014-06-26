@@ -1,9 +1,9 @@
 Package: com.insomniac.ras
-Name: RightAlignStatus
-Depends: mobilesubstrate
-Version: 0.3.5
+Name: RASBerry
+Depends: mobilesubstrate, libstatusbar
+Version: 0.4.0
 Architecture: iphoneos-arm
-Description: Right Align Statusbar like Android
+Description: Right Align Statusbar like Android...and more!
 Maintainer: insomniac
 Author: insomniac <narcalepticinsomniac13@gmail.com>
 Section: Tweaks
