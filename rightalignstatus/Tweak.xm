@@ -4,14 +4,6 @@ BOOL enabled = YES;
 BOOL lenabled = NO;
 BOOL carrierenabled = NO;
 BOOL ssbenabled = YES;
-BOOL ccenabled = NO;
-
-CGFloat userfred = 0;
-CGFloat userfgreen = 0;
-CGFloat userfblue = 0;
-CGFloat userbred = 0;
-CGFloat userbgreen = 0;
-CGFloat userbblue = 0;
 
 // Statusbar Alignment
 %hook UIStatusBarItem
@@ -32,18 +24,6 @@ CGFloat userbblue = 0;
     }
     
     return %orig;
-}
-%end
-
-%hook UIStatusBarNewUIForegroundStyleAttributes
-// Change statusbar color?
--(id) initWithRequest:(id)arg1 backgroundColor:(id)arg2 foregroundColor:(id)arg3
-{
-	if(ccenabled){
-		return %orig(arg1, [UIColor colorWithRed:userbred green:userbgreen blue:userbblue alpha:1], [UIColor colorWithRed:userfred green:userfgreen blue:userfblue alpha:1]);
-	}
-	
-	return %orig;
 }
 %end
 
@@ -95,39 +75,7 @@ static void loadSettings()
         ssbenabled = [[prefs objectForKey:@"ssbenabled"] boolValue];
     }
     
-	if([prefs objectForKey:@"ccenabled"])
-    {
-        ccenabled = [[prefs objectForKey:@"ccenabled"] boolValue];
-    }
-	
-	if([prefs objectForKey:@"userfred"])
-    {
-        userfred = [[prefs objectForKey:@"userfred"] floatValue];
-    }
-	
-	if([prefs objectForKey:@"userfgreen"])
-    {
-        userfgreen = [[prefs objectForKey:@"userfgreen"] floatValue];
-    }
-	
-	if([prefs objectForKey:@"userfblue"])
-    {
-        userfblue = [[prefs objectForKey:@"userfblue"] floatValue];
-    }
-	if([prefs objectForKey:@"userbred"])
-    {
-        userbred = [[prefs objectForKey:@"userbred"] floatValue];
-    }
-	
-	if([prefs objectForKey:@"userbgreen"])
-    {
-        userbgreen = [[prefs objectForKey:@"userbgreen"] floatValue];
-    }
-	
-	if([prefs objectForKey:@"userbblue"])
-    {
-        userbblue = [[prefs objectForKey:@"userbblue"] floatValue];
-    }
+
 	
     // Don't forget to release you resources!!
     [prefs release];
