@@ -77,146 +77,19 @@
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Color Options</string>
 			<key>footerText</key>
-			<string>Respring is required to effect color changes</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>com.insomniac.ras</string>
-			<key>key</key>
-			<string>ccenabled</string>
-			<key>label</key>
-			<string>Custom Foreground Color</string>
-			<key>PostNotification</key>
-			<string>com.insomniac.ras/refreshsettings</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Foreground RGB</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSliderCell</string>
-			<key>min</key>
-			<real>0</real>
-			<key>max</key>
-			<real>1</real>
-			<key>default</key>
-			<real>0</real>
-			<key>defaults</key>
-			<string>com.insomniac.ras</string>
-			<key>key</key>
-			<string>userfred</string>
-			<key>PostNotification</key>
-			<string>com.insomniac.ras/refreshsettings</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSliderCell</string>
-			<key>min</key>
-			<real>0</real>
-			<key>max</key>
-			<real>1</real>
-			<key>default</key>
-			<real>0</real>
-			<key>defaults</key>
-			<string>com.insomniac.ras</string>
-			<key>key</key>
-			<string>userfgreen</string>
-			<key>PostNotification</key>
-			<string>com.insomniac.ras/refreshsettings</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSliderCell</string>
-			<key>min</key>
-			<real>0</real>
-			<key>max</key>
-			<real>1</real>
-			<key>default</key>
-			<real>0</real>
-			<key>defaults</key>
-			<string>com.insomniac.ras</string>
-			<key>key</key>
-			<string>userfblue</string>
-			<key>PostNotification</key>
-			<string>com.insomniac.ras/refreshsettings</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Background RGB</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSliderCell</string>
-			<key>min</key>
-			<real>0</real>
-			<key>max</key>
-			<real>1</real>
-			<key>default</key>
-			<real>0</real>
-			<key>defaults</key>
-			<string>com.insomniac.ras</string>
-			<key>key</key>
-			<string>userbred</string>
-			<key>PostNotification</key>
-			<string>com.insomniac.ras/refreshsettings</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSliderCell</string>
-			<key>min</key>
-			<real>0</real>
-			<key>max</key>
-			<real>1</real>
-			<key>default</key>
-			<real>0</real>
-			<key>defaults</key>
-			<string>com.insomniac.ras</string>
-			<key>key</key>
-			<string>userbgreen</string>
-			<key>PostNotification</key>
-			<string>com.insomniac.ras/refreshsettings</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSliderCell</string>
-			<key>min</key>
-			<real>0</real>
-			<key>max</key>
-			<real>1</real>
-			<key>default</key>
-			<real>0</real>
-			<key>defaults</key>
-			<string>com.insomniac.ras</string>
-			<key>key</key>
-			<string>userbblue</string>
-			<key>PostNotification</key>
-			<string>com.insomniac.ras/refreshsettings</string>
+			<string>For support,
+tweet me: @insomniac1363
+or
+Email me: narcalepticinsomniac13@gmail.com</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>For support, tweet me: @insomniac1363
-			or
-			Email me: narcalepticinsomniac13@gmail.com</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>footerText</key>
-			<string>Big thank you to magn2o for making this tweak possible!</string>
+			<string>Big thank you to magn2o for making this tweak possible!
+And to @BosssDesign for the awesome new icon.
+			</string>
 		</dict>
 	</array>
 	<key>title</key>
