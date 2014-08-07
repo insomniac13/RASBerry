@@ -37,7 +37,17 @@ BOOL ssbenabled = YES;
 }
 %end
 
-%hook SBAwayController
+%hook SBLockScreenViewController
+//Same size statusbar?
+- (int)statusBarStyle
+{
+	if(ssbenabled){
+		return 0;
+	}
+	
+	return %orig;
+}
+
 // Force Statusbar Clock On LS?
 - (BOOL)shouldShowLockStatusBarTime
 {
