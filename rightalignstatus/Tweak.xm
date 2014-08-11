@@ -58,6 +58,17 @@ BOOL ssbenabled = YES;
 }
 %end
 
+%hook UIStatusBarLayoutManager
+//Force Statusbar Clock on LS?
+- (void)setVisibilityOfItem:(id)arg1 visible:(BOOL)arg2
+{
+	if(enabled){
+		return %orig(Time, 1);
+	}
+	return %orig;
+}
+%end
+
 // Let's load our settings.
 static void loadSettings()
 {
